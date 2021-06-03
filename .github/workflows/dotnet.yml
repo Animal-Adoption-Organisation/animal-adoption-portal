@@ -23,7 +23,8 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test **/AnimalAdoption.Web.Portal.UnitTests.csproj --no-build --verbosity normal
-
+    - name: Publish
+      run: dotnet publish -o publish
 
 
     - name: List out directory contents
@@ -41,7 +42,7 @@ jobs:
         # Artifact name
         name: default
         # A file, directory or wildcard pattern that describes what to upload
-        path: ignore
+        path: publish
         # The desired behavior if no files are found using the provided path.
         if-no-files-found: ignore
         retention-days: 5
