@@ -24,6 +24,17 @@ jobs:
     - name: Test
       run: dotnet test **/AnimalAdoption.Web.Portal.UnitTests.csproj --no-build --verbosity normal
 
+
+
+    - name: List out directory contents
+      run: |
+          echo "Listing the contents of the GitHub workspace directory"
+          ls ${{ github.workspace }}
+
+          echo "Recursively listing all contents of the current directory"
+          ls -R
+
+
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:
@@ -35,10 +46,4 @@ jobs:
         if-no-files-found: ignore
         retention-days: 5
 
-    - name: List out directory contents
-      run: |
-          echo "Listing the contents of the GitHub workspace directory"
-          ls ${{ github.workspace }}
-
-          echo "Recursively listing all contents of the current directory"
-          ls -R
+   
