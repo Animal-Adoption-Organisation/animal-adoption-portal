@@ -21,3 +21,5 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test **/AnimalAdoption.Web.Portal.UnitTests.csproj --no-build --verbosity normal
+    - name: publish
+      run: dotnet publish -o /output
