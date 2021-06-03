@@ -4,7 +4,7 @@ on:
   push:
     branches: [ vinay-ch2-ex1 ]
   pull_request:
-    branches: [ vinay-ch2-ex1 ]
+    branches: [ vinay-ch2-ex1, master ]
 
 jobs:
   build:
