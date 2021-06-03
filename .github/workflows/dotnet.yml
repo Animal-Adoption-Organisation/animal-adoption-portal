@@ -26,16 +26,6 @@ jobs:
     - name: Publish
       run: dotnet publish -o publish
 
-
-    - name: List out directory contents
-      run: |
-          echo "Listing the contents of the GitHub workspace directory"
-          ls ${{ github.workspace }}
-
-          echo "Recursively listing all contents of the current directory"
-          ls -R
-
-
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:
