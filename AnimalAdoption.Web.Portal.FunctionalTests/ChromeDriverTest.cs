@@ -7,6 +7,7 @@ using System;
 
 namespace AnimalAdoption.Web.Portal.FunctionalTests
 {
+    [Ignore("No chrome on build server")]
     [TestClass]
     public class ChromeDriverTest
     {
