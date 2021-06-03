@@ -34,3 +34,11 @@ jobs:
         # The desired behavior if no files are found using the provided path.
         if-no-files-found: ignore
         retention-days: 5
+
+    - name: List out directory contents
+      run: |
+          echo "Listing the contents of the GitHub workspace directory"
+          ls ${{ github.workspace }}
+
+          echo "Recursively listing all contents of the current directory"
+          ls -R
