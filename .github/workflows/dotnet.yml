@@ -1,0 +1,40 @@
+name: .NET
+
+on:
+  push:
+    branches: [ vinay-ch2-ex1 ]
+  pull_request:
+    branches: [ vinay-ch2-ex1, master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test **/AnimalAdoption.Web.Portal.UnitTests.csproj --no-build --verbosity normal
+    - name: Publish
+      run: dotnet publish -o publish
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        # Artifact name
+        name: default
+        # A file, directory or wildcard pattern that describes what to upload
+        path: publish
+        # The desired behavior if no files are found using the provided path.
+        if-no-files-found: ignore
+        retention-days: 5
+
+   
