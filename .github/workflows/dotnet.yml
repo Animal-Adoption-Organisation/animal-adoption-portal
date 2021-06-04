@@ -2,9 +2,10 @@ name: DEV_ANIMAL_BUILD_DEPLOYMENT
 
 on:
   push:
-    branches: [ vinay-ch2-ex1, dev1, master ]
+    branches: [ vinay-ch2-ex1, dev, master ]
   pull_request:
-    branches: [ vinay-ch2-ex1, dev1, master ]
+    branches: [ vinay-ch2-ex1, dev, master ]
+  workflow_dispatch:
 
 jobs:
   build:
