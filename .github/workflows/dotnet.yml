@@ -24,7 +24,7 @@ jobs:
     - name: Test
       run: dotnet test **/AnimalAdoption.Web.Portal.UnitTests.csproj --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish -o publish
+      run: dotnet publish **/AnimalAdoption.Web.Portal.csproj -o ./publish_out
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
@@ -32,7 +32,7 @@ jobs:
         # Artifact name
         name: dev_animal_artifact
         # A file, directory or wildcard pattern that describes what to upload
-        path: publish
+        path: ./publish_out
         # The desired behavior if no files are found using the provided path.
         if-no-files-found: ignore
         retention-days: 5
@@ -45,5 +45,5 @@ jobs:
         # Applies to Web Apps(Windows and Linux) and Web App Containers(linux). Multi container scenario not supported. Publish profile (*.publishsettings) file contents with Web Deploy secrets
         publish-profile: ${{secrets.DEV_PUBLISH_PROFILE}}
         # Enter an existing Slot other than the Production slot
-        package: publish
+        package: ./publish_out
 
