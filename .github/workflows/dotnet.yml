@@ -24,7 +24,7 @@ jobs:
     - name: Test
       run: dotnet test **/AnimalAdoption.Web.Portal.UnitTests.csproj --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish **/AnimalAdoption.Web.Portal.UnitTests.csproj -o ./publish_outpath
+      run: dotnet publish **/AnimalAdoption.Web.Portal.csproj -o ./publish_outpath
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
