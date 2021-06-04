@@ -43,7 +43,7 @@ jobs:
         # Name of the Azure Web App
         app-name: dev-animal-adoption
         # Applies to Web Apps(Windows and Linux) and Web App Containers(linux). Multi container scenario not supported. Publish profile (*.publishsettings) file contents with Web Deploy secrets
-        publish-profile: ${{secrets.PHILIP_TEST}}
+        publish-profile: ${{secrets.DEV_PUBLISH_PROFILE}}
         # Enter an existing Slot other than the Production slot
         package: publish
 
