@@ -2,9 +2,9 @@ name: .NET
 
 on:
   push:
-    branches: [ vinay-ch2-ex1 ]
+    branches: [ vinay-ch2-ex1, dev, master ]
   pull_request:
-    branches: [ vinay-ch2-ex1, master ]
+    branches: [ vinay-ch2-ex1, dev, master ]
 
 jobs:
   build:
